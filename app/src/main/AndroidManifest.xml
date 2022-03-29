@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project112">
         <activity
+            android:name=".UserData_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Locate_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Emergancy_Activity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
