@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A51E1E"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/emergency_button"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="160dp"
+        android:autoText="true"
+        android:backgroundTint="#FFFFFF"
         android:onClick="emergancyOnClick"
         android:text="Emergency"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,12 +31,15 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="170dp"
+        android:autoText="true"
+        android:backgroundTint="#FFFFFF"
         android:onClick="locateOnClick"
         android:text="Locate embassy"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/emergency_button" />
 
     <Button
         android:id="@+id/fillPersonData_button"
@@ -46,4 +53,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="111dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="112"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
