@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void locateOnClick(View view)
     {
-        Intent intent = new Intent(this, Locate_Activity.class);
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 
