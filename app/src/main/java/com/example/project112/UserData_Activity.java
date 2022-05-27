@@ -47,11 +47,9 @@ public class UserData_Activity extends AppCompatActivity {
         firstName = findViewById(R.id.editTextName);
         lastName = findViewById(R.id.editTextSurname);
         citizenNumber = findViewById(R.id.editTextCitizenNum);
-        dateOfBirth = findViewById(R.id.editTextDOB);
         countryOfBirth = findViewById(R.id.editTextCountryOfBirth);
         age = findViewById(R.id.editTextAge);
         mobilePhoneNum = findViewById(R.id.editTextPhoneNum);
-        housePhoneNum = findViewById(R.id.editTextHouseNum);
 
         userData = getSharedPreferences("UserDataPreferences", Context.MODE_PRIVATE);
 
@@ -65,11 +63,9 @@ public class UserData_Activity extends AppCompatActivity {
         userDataEditor.putString("firstName", firstName.getText().toString());
         userDataEditor.putString("lastName", lastName.getText().toString());
         userDataEditor.putString("citizenNumber", citizenNumber.getText().toString());
-        userDataEditor.putString("dateOfBirth", dateOfBirth.getText().toString());
         userDataEditor.putString("countryOfBirth", countryOfBirth.getText().toString());
         userDataEditor.putString("age", age.getText().toString());
         userDataEditor.putString("mobilePhoneNumber", mobilePhoneNum.getText().toString());
-        userDataEditor.putString("housePhoneNumber", housePhoneNum.getText().toString());
 
         if(userDataEditor.commit()){
             Toast.makeText(this, "Data saved successfully!", Toast.LENGTH_SHORT).show();
@@ -84,11 +80,9 @@ public class UserData_Activity extends AppCompatActivity {
         firstName.setText(userData.getString("firstName", ""));
         lastName.setText(userData.getString("lastName", ""));
         citizenNumber.setText(userData.getString("citizenNumber", ""));
-        dateOfBirth.setText(userData.getString("dateOfBirth", ""));
         countryOfBirth.setText(userData.getString("countryOfBirth", ""));
         age.setText(userData.getString("age", ""));
         mobilePhoneNum.setText(userData.getString("mobilePhoneNumber", ""));
-        housePhoneNum.setText(userData.getString("housePhoneNumber", ""));
     }
 
 }
