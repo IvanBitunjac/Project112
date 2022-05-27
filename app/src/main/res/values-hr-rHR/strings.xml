@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Project112</string>
+    <string name="name">Ime</string>
+    <string name="surname">Prezime</string>
+    <string name="medications">Lijekovi</string>
+    <string name="allergies">Alergije</string>
+    <string name="police">Policija</string>
+    <string name="cancel">Odkaži</string>
+    <string name="hospital">Bolnica</string>
+</resources>
