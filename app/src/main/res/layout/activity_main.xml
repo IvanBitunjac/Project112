@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f57878"
+    android:background="#A51E1E"
     tools:context=".MainActivity">
 
     <Button
@@ -12,154 +12,60 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="160dp"
         android:autoText="true"
-        android:backgroundTint="#F80606"
-        android:onClick="btnEmergencyOnClick"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="emergencyOnClick"
         android:text="Emergency"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/locateEmb_button"
         android:layout_width="168dp"
         android:layout_height="75dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="170dp"
         android:autoText="true"
         android:backgroundTint="#FFFFFF"
         android:onClick="locateOnClick"
         android:text="Nearby services"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.698"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintTop_toBottomOf="@+id/emergency_button" />
 
     <Button
         android:id="@+id/fillPersonData_button"
-        android:layout_width="393dp"
-        android:layout_height="45dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="46dp"
         android:onClick="personalDataOnClick"
         android:text="Fill personal data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewProjectName"
-        android:layout_width="231dp"
-        android:layout_height="81dp"
-        android:text="SOS112"
-        android:textAlignment="center"
-        android:textColor="#FAFAFA"
-        android:textSize="48sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="111dp"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="textPersonName"
+        android:text="112"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
-
-    <TextView
-        android:id="@+id/textViewEmergencyExplain"
-        android:layout_width="178dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="140dp"
-        android:text="Immediately calls 112"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/emergency_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnPoliceCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#032BF4"
-        android:onClick="btnPoliceCallClicked"
-        android:text="Police"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
-
-    <Button
-        android:id="@+id/btnHospitalCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#F30606"
-        android:onClick="btnHospitalCallClicked"
-        android:text="Hospital"
-        android:textColorLink="#23D38D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
-
-    <Button
-        android:id="@+id/btnFirebrigadeCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#F3CC0A"
-        android:onClick="btnFirebrigadeCallClicked"
-        android:text="Firebrigade"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
-
-    <Button
-        android:id="@+id/btnSeaRescueCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#02B9F1"
-        android:onClick="btnSeaRescueCallClicked"
-        android:text="Sea Rescue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
-
-    <TextView
-        android:id="@+id/textViewSpecificEmergency"
-        android:layout_width="171dp"
-        android:layout_height="30dp"
-        android:text="Specific emergency:"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
