@@ -8,4 +8,21 @@
     <string name="police">Policija</string>
     <string name="cancel">Odkaži</string>
     <string name="hospital">Bolnica</string>
+    <string name="dateOfBirth">Datum rođenja</string>
+    <string name="countryOfBirth">Zemlja rođenja</string>
+    <string name="age">Godine</string>
+    <string name="phoneNumber">Broj mobitela</string>
+    <string name="citizenNumber">Broj osobne</string>
+    <string name="yourCitizenNumber">Broj osobne</string>
+    <string name="yourFirstName">Ime</string>
+    <string name="yourLastName">Prezime</string>
+    <string name="yourAge">Godine</string>
+    <string name="yourPhoneNumber">Broj mobitela</string>
+    <string name="immediatelyCalls112">Odmah zovi 112</string>
+    <string name="firebrigade">Vatrogasci</string>
+    <string name="seaRescue">Pomoč na moru</string>
+    <string name="nearbyServices">Službe u blizini</string>
+    <string name="fillPersonalData">Popuni osobne podatke</string>
+    <string name="emergency">Hitan slučaj</string>
+    <string name="specificEmergency">Određeni slučaj</string>
 </resources>

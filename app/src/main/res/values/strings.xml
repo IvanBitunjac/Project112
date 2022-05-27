@@ -3,14 +3,12 @@
     <string name="GPSAlertDialogTitle" translatable="false">Alert</string>
     <string name="GPSAlertDialogMessage" translatable="false">AlertMessage</string>
     <string name="action_settings" translatable="false">actionSetting</string>
-    <string name="hospital">Hospital</string>
     <string name="title_activity_test" translatable="false">TestActivity</string>
     <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="name">Name</string>
     <string name="surname">Surname</string>allergies
     <string name="medications">Medications</string>
     <string name="allergies">Allergies</string>
-    <string name="police">Police</string>
     <string name="cancel">Cancle</string>
 
 </resources>

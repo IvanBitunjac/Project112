@@ -47,7 +47,6 @@ public class UserData_Activity extends AppCompatActivity {
         firstName = findViewById(R.id.editTextName);
         lastName = findViewById(R.id.editTextSurname);
         citizenNumber = findViewById(R.id.editTextCitizenNum);
-        countryOfBirth = findViewById(R.id.editTextCountryOfBirth);
         age = findViewById(R.id.editTextAge);
         mobilePhoneNum = findViewById(R.id.editTextPhoneNum);
 
@@ -63,7 +62,6 @@ public class UserData_Activity extends AppCompatActivity {
         userDataEditor.putString("firstName", firstName.getText().toString());
         userDataEditor.putString("lastName", lastName.getText().toString());
         userDataEditor.putString("citizenNumber", citizenNumber.getText().toString());
-        userDataEditor.putString("countryOfBirth", countryOfBirth.getText().toString());
         userDataEditor.putString("age", age.getText().toString());
         userDataEditor.putString("mobilePhoneNumber", mobilePhoneNum.getText().toString());
 
@@ -80,7 +78,6 @@ public class UserData_Activity extends AppCompatActivity {
         firstName.setText(userData.getString("firstName", ""));
         lastName.setText(userData.getString("lastName", ""));
         citizenNumber.setText(userData.getString("citizenNumber", ""));
-        countryOfBirth.setText(userData.getString("countryOfBirth", ""));
         age.setText(userData.getString("age", ""));
         mobilePhoneNum.setText(userData.getString("mobilePhoneNumber", ""));
     }
