@@ -49,6 +49,7 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_gravity="center_horizontal"
+        android:background="@null"
         android:onClick="btnEmergencyOnClick"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/emergency_call" />
@@ -76,6 +77,7 @@
             android:layout_weight="1"
             android:onClick="btnPoliceCallClicked"
             android:scaleType="fitCenter"
+            android:background="@null"
             app:srcCompat="@drawable/police_car" />
 
         <ImageButton
@@ -85,6 +87,7 @@
             android:layout_weight="1"
             android:onClick="btnHospitalCallClicked"
             android:scaleType="fitCenter"
+            android:background="@null"
             app:srcCompat="@drawable/ambulance" />
 
     </LinearLayout>
@@ -101,6 +104,7 @@
             android:layout_weight="1"
             android:onClick="btnFirebrigadeCallClicked"
             android:scaleType="fitCenter"
+            android:background="@null"
             app:srcCompat="@drawable/rescue" />
 
         <ImageButton
@@ -110,36 +114,46 @@
             android:layout_weight="1"
             android:onClick="btnSeaRescueCallClicked"
             android:scaleType="fitCenter"
+            android:background="@null"
             app:srcCompat="@drawable/ship" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/locateEmb_button"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:autoText="true"
-            android:backgroundTint="#FFFFFF"
-            android:onClick="locateOnClick"
-            android:text="@string/nearbyServices"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            app:icon="@android:drawable/ic_dialog_map"
-            app:iconGravity="textStart"
-            app:iconTint="#3F51B5" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center">
 
-        <Button
-            android:id="@+id/fillPersonData_button"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:onClick="personalDataOnClick"
-            android:text="@string/fillPersonalData"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/fillPersonData_button"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="0"
+                android:onClick="personalDataOnClick"
+                android:text="@string/fillPersonalData"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/locateEmb_button"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="0"
+                android:autoText="false"
+                android:backgroundTint="#FFFFFF"
+                android:onClick="locateOnClick"
+                android:text="@string/nearbyServices"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_dialog_map"
+                app:iconGravity="textStart"
+                app:iconTint="#3F51B5" />
+        </LinearLayout>
 
     </LinearLayout>
     <![CDATA[

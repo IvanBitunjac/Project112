@@ -85,14 +85,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-
-
         LatLng cur = new LatLng(Latitude, Longitude);
         mMap.addMarker(new MarkerOptions().position(cur).title("Current Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(cur));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(12.0f));
-
-
 
     }
 
@@ -107,7 +103,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         getNearbyPlaces.execute(transferData);
         Toast.makeText(this, "Searching for hospitals", Toast.LENGTH_SHORT).show();
-
     }
 
     private String getUrl(double la, double lo, String nearbyPlace)
