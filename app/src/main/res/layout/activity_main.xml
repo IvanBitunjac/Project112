@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f57878"
+    android:background="#9E2A2B"
+    android:orientation="vertical"
     tools:context=".MainActivity"><![CDATA[
 
     app:layout_constraintTop_toTopOf="parent"
@@ -23,160 +24,131 @@
 
     ]]>
 
-    <Button
-        android:id="@+id/emergency_button"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="160dp"
-        android:autoText="true"
-        android:backgroundTint="#F80606"
-        android:onClick="btnEmergencyOnClick"
-        android:text="@string/emergency"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/locateEmb_button"
-        android:layout_width="168dp"
-        android:layout_height="75dp"
-        android:autoText="true"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="locateOnClick"
-        android:text="@string/nearbyServices"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emergency_button"
-        app:layout_constraintVertical_bias="0.755" />
-
-    <Button
-        android:id="@+id/fillPersonData_button"
-        android:layout_width="393dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="154dp"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="16dp"
-        android:onClick="personalDataOnClick"
-        android:text="@string/fillPersonalData"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textViewProjectName"
-        android:layout_width="231dp"
+        android:layout_width="match_parent"
         android:layout_height="81dp"
         android:text="SOS112"
         android:textAlignment="center"
         android:textColor="#FAFAFA"
         android:textSize="48sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/textViewEmergencyExplain"
-        android:layout_width="178dp"
+        android:layout_width="match_parent"
         android:layout_height="27dp"
-        android:layout_marginTop="46dp"
         android:text="@string/immediatelyCalls112"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/emergency_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewProjectName" />
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnPoliceCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#032BF4"
-        android:onClick="btnPoliceCallClicked"
-        android:text="@string/police"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
-
-    <Button
-        android:id="@+id/btnHospitalCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#F30606"
-        android:onClick="btnHospitalCallClicked"
-        android:text="@string/hospital"
-        android:textColorLink="#23D38D"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
-
-    <Button
-        android:id="@+id/btnFirebrigadeCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#F3CC0A"
-        android:onClick="btnFirebrigadeCallClicked"
-        android:text="@string/firebrigade"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
-
-    <Button
-        android:id="@+id/btnSeaRescueCall"
-        android:layout_width="140dp"
-        android:layout_height="67dp"
-        android:backgroundTint="#02B9F1"
-        android:onClick="btnSeaRescueCallClicked"
-        android:text="@string/seaRescue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="btnEmergencyOnClick"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/emergency_call" />
 
     <TextView
         android:id="@+id/textViewSpecificEmergency"
-        android:layout_width="171dp"
+        android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginTop="32dp"
         android:text="@string/specificEmergency"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emergency_button" />
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="btnPoliceCallClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/police_car" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="btnHospitalCallClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ambulance" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:onClick="btnFirebrigadeCallClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/rescue" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="btnSeaRescueCallClicked"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ship" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/locateEmb_button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:autoText="true"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="locateOnClick"
+            android:text="@string/nearbyServices"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:icon="@android:drawable/ic_dialog_map"
+            app:iconGravity="textStart"
+            app:iconTint="#3F51B5" />
+
+        <Button
+            android:id="@+id/fillPersonData_button"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:onClick="personalDataOnClick"
+            android:text="@string/fillPersonalData"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <![CDATA[
+
+
+
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintVertical_bias="0.439" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+]]>
+</LinearLayout>
