@@ -6,9 +6,33 @@
     <string name="title_activity_test" translatable="false">TestActivity</string>
     <string name="title_activity_maps" translatable="false">MapsActivity</string>
     <string name="name">Name</string>
-    <string name="surname">Surname</string>allergies
+    <string name="surname">Surname</string>
     <string name="medications">Medications</string>
     <string name="allergies">Allergies</string>
     <string name="cancel">Cancle</string>
+    <string name="dateOfBirth">Date Of Birth</string>
+    <string name="countryOfBirth">Country Of Birth</string>
+    <string name="age">Age</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="citizenNumber">Citizen number</string>
+
+    <string name="yourCitizenNumber">Your citizen number</string>
+    <string name="yourFirstName">Your first name</string>
+    <string name="yourLastName">Your last name</string>
+    <string name="yourAge">Your age</string>
+    <string name="yourPhoneNumber">Your phone number</string>
+
+    <string name="immediatelyCalls112">Immediately calls 112</string>
+    <string name="emergency">Emergency</string>
+
+    <string name="specificEmergency">Specific emergency:</string>
+    <string name="police">Police</string>
+    <string name="hospital">Hospital</string>
+    <string name="firebrigade">Firebrigade</string>
+    <string name="seaRescue">Sea Rescue</string>
+    <string name="nearbyServices">Nearby services</string>
+
+    <string name="fillPersonalData">Fill personal data</string>
+
 
 </resources>
