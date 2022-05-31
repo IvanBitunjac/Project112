@@ -127,22 +127,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="62dp"
             android:layout_weight="1"
             android:gravity="bottom|center">
 
             <Button
                 android:id="@+id/fillPersonData_button"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="213dp"
+                android:layout_height="50dp"
                 android:layout_weight="0"
+                android:background="@color/places_autocomplete_error_button"
                 android:onClick="personalDataOnClick"
                 android:text="@string/fillPersonalData"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/locateEmb_button"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
                 android:layout_weight="0"
                 android:autoText="false"
                 android:backgroundTint="#FFFFFF"
