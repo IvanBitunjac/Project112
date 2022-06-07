@@ -29,11 +29,7 @@ public class UserData_Activity extends AppCompatActivity {
     private EditText firstName;
     private EditText lastName;
     private EditText citizenNumber;
-    private EditText dateOfBirth;
-    private EditText countryOfBirth;
     private EditText age;
-    private EditText mobilePhoneNum;
-    private EditText housePhoneNum;
 
     //User data
     SharedPreferences userData;
@@ -48,7 +44,6 @@ public class UserData_Activity extends AppCompatActivity {
         lastName = findViewById(R.id.editTextSurname);
         citizenNumber = findViewById(R.id.editTextCitizenNum);
         age = findViewById(R.id.editTextAge);
-        mobilePhoneNum = findViewById(R.id.editTextPhoneNum);
 
         userData = getSharedPreferences("UserDataPreferences", Context.MODE_PRIVATE);
 
@@ -63,7 +58,6 @@ public class UserData_Activity extends AppCompatActivity {
         userDataEditor.putString("lastName", lastName.getText().toString());
         userDataEditor.putString("citizenNumber", citizenNumber.getText().toString());
         userDataEditor.putString("age", age.getText().toString());
-        userDataEditor.putString("mobilePhoneNumber", mobilePhoneNum.getText().toString());
 
         if(userDataEditor.commit()){
             Toast.makeText(this, "Data saved successfully!", Toast.LENGTH_SHORT).show();
@@ -79,7 +73,6 @@ public class UserData_Activity extends AppCompatActivity {
         lastName.setText(userData.getString("lastName", ""));
         citizenNumber.setText(userData.getString("citizenNumber", ""));
         age.setText(userData.getString("age", ""));
-        mobilePhoneNum.setText(userData.getString("mobilePhoneNumber", ""));
     }
 
 }

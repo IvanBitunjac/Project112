@@ -25,4 +25,5 @@
     <string name="fillPersonalData">Popuni osobne podatke</string>
     <string name="emergency">Hitan slučaj</string>
     <string name="specificEmergency">Određeni slučaj</string>
+    <string name="saveData">Spremi podatke</string>
 </resources>
