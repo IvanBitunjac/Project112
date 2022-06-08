@@ -49,7 +49,7 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_gravity="center_horizontal"
-        android:background="@null"
+        android:backgroundTint="#C8C8C8"
         android:onClick="btnEmergencyOnClick"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/emergency_call" />
@@ -75,9 +75,9 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:backgroundTint="#C8C8C8"
             android:onClick="btnPoliceCallClicked"
             android:scaleType="fitCenter"
-            android:background="@null"
             app:srcCompat="@drawable/police_car" />
 
         <ImageButton
@@ -85,9 +85,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#C8C8C8"
             android:onClick="btnHospitalCallClicked"
             android:scaleType="fitCenter"
-            android:background="@null"
             app:srcCompat="@drawable/ambulance" />
 
     </LinearLayout>
@@ -102,9 +102,9 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_weight="1"
+            android:backgroundTint="#C8C8C8"
             android:onClick="btnFirebrigadeCallClicked"
             android:scaleType="fitCenter"
-            android:background="@null"
             app:srcCompat="@drawable/rescue" />
 
         <ImageButton
@@ -112,9 +112,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:backgroundTint="#C8C8C8"
             android:onClick="btnSeaRescueCallClicked"
             android:scaleType="fitCenter"
-            android:background="@null"
             app:srcCompat="@drawable/ship" />
 
     </LinearLayout>

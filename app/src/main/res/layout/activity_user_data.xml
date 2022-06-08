@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
             <TextView
@@ -36,13 +36,14 @@
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:id="@+id/textViewSurname"
@@ -63,12 +64,13 @@
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:id="@+id/textViewAge"
@@ -89,12 +91,13 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:minHeight="48dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="70dp">
 
             <TextView
                 android:id="@+id/textViewCitizenNum"
@@ -116,7 +119,32 @@
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <TextView
+                android:id="@+id/textCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:gravity="center|left"
+                android:text="Country of birth"
+                android:textAlignment="gravity"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:textAlignment="center" />
 
         </LinearLayout>
 
@@ -174,6 +202,7 @@
                 android:id="@+id/buttonSaveData"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:background="@color/places_autocomplete_error_button"
                 android:onClick="BtnSaveDataClicked"
                 android:text="Save data" />
         </LinearLayout>
