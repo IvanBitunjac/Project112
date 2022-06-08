@@ -16,12 +16,10 @@
     <string name="immediatelyCalls112">Appelle immediatement le 112</string>
     <string name="firebrigade">Pompiers</string>
     <string name="seaRescue">Sauvetage en mer</string>
-    <string name="seaRescue">Sauvetage en mer</string>
     <string name="nearbyServices">Services a proximite</string>
     <string name="fillPersonalData">Remplir les donnees personnelles</string>
     <string name="emergency">Urgence</string>
     <string name="specificEmergency">Urgence specifique</string>
-    <string name="specificEmergency">Urgence spécifique</string>
     <string name="saveData">Enregistrer des donnees</string>
     <string name="embbasy">Ambassade</string>
 </resources>
