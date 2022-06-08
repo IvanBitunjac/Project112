@@ -46,9 +46,7 @@ public class UserData_Activity extends AppCompatActivity {
     private List<String> userNames = new ArrayList<>();
     private User selectedUser;
 
-
     private UserAdapter db;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -235,11 +233,11 @@ public class UserData_Activity extends AppCompatActivity {
 
                 for (User var: userList)
                 {
-                 if (var.GetName() == usersSpinner.getSelectedItem().toString())
-                 {
-                     selectedUser = var;
-                     UpdateValues(selectedUser);
-                 }
+                     if (var.GetName() == usersSpinner.getSelectedItem().toString())
+                     {
+                         selectedUser = var;
+                         UpdateValues(selectedUser);
+                     }
                 }
             }
 

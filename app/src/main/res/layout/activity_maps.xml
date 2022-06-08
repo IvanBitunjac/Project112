@@ -47,4 +47,11 @@
         android:textColor="#ffffff"
         tools:ignore="TextContrastCheck" />
 
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="findEmbassy"
+        android:text="Button" />
+
 </RelativeLayout>
