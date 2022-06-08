@@ -2,6 +2,7 @@ package com.example.project112;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -76,9 +77,6 @@ public class UserData_Activity extends AppCompatActivity {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             usersSpinner.setAdapter(adapter);
         }
-
-        //userData = getSharedPreferences("UserDataPreferences", Context.MODE_PRIVATE);
-        //ReadUserDataFromPreferences();
     }
 
     private void FindAllViews()
@@ -91,27 +89,6 @@ public class UserData_Activity extends AppCompatActivity {
         medications = findViewById(R.id.editTextTextMedications);
         allergies = findViewById(R.id.editTextTextAllergies);
         usersSpinner = findViewById(R.id.spinner);
-    }
-
-    public void BtnSaveDataClicked(View view){
-        userDataEditor = userData.edit();
-
-        userDataEditor.putString("firstName", firstName.getText().toString());
-        userDataEditor.putString("lastName", lastName.getText().toString());
-        userDataEditor.putString("citizenNumber", citizenNumber.getText().toString());
-
-        if(userDataEditor.commit()){
-            Toast.makeText(this, "Data saved successfully!", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(this, "Error saving data!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void ReadUserDataFromPreferences(){
-        firstName.setText(userData.getString("firstName", ""));
-        lastName.setText(userData.getString("lastName", ""));
-        citizenNumber.setText(userData.getString("citizenNumber", ""));
     }
 
     private void FillCountrySpinner()
@@ -133,6 +110,7 @@ public class UserData_Activity extends AppCompatActivity {
         country_obj.setAdapter(countryAdapter);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void DatePicker()
     {
         EditText editTextDate = findViewById(R.id.editTextAge);
@@ -187,20 +165,6 @@ public class UserData_Activity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         usersSpinner.setAdapter(adapter);
         usersSpinner.setSelection(adapter.getPosition(selectedUser.GetName()));
-    }
-
-    private void UpdateUserToDB(User user)
-    {
-        try {
-            db.open();
-
-            db.updateUser(user.GetID(),user.GetName(), user.GetLastName(), user.GetCNumber(),
-                    user.GetCountry(), user.GetMedications(), user.GetAllergies());
-
-            db.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
     }
 
     private void SaveUserToDataBase(User newUser)
