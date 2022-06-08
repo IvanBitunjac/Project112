@@ -12,7 +12,6 @@
     <string name="cancel">Cancle</string>
     <string name="dateOfBirth">Date Of Birth</string>
     <string name="countryOfBirth">Country Of Birth</string>
-    <string name="age">Age</string>
     <string name="phoneNumber">Phone Number</string>
     <string name="citizenNumber">Citizen number</string>
 
@@ -28,7 +27,7 @@
     <string name="fillPersonalData">Fill personal data</string>
     <string name="saveData">Save data</string>
     <string name="embbasy">Embbasy</string>
-    <string name="country">Country of birth</string>
+    <string name="age">Age</string>
 
 
 </resources>

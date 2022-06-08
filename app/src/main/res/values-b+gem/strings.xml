@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project112</string>
+    <string name="name">Vorname</string>
+    <string name="name">Vorname</string>
+    <string name="surname">Familien-oder</string>
+    <string name="medications">Nachname</string>
+    <string name="allergies">Medikamente</string>
+    <string name="police">Polizei</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="hospital">Krankenhaus</string>
+    <string name="dateOfBirth">Geburtsdatum</string>
+    <string name="dateOfBirth">Geburtsdatum</string>
+    <string name="countryOfBirth">Geburtsland</string>
+    <string name="age">Das Alter</string>
+    <string name="phoneNumber">Telefonnummer</string>
+    <string name="citizenNumber">Burgernummer</string>
+    <string name="citizenNumber">Bürgernummer</string>
+    <string name="immediatelyCalls112">Ruft sofort 112 an</string>
+    <string name="firebrigade">Feuerwehr</string>
+    <string name="seaRescue">Seenotrettung</string>
+    <string name="nearbyServices">Dienstleistungen in der Nahe</string>
+    <string name="fillPersonalData">Personliche Daten ausfullen</string>
+    <string name="emergency">Notfall</string>
+    <string name="emergency">Notfall</string>
+    <string name="specificEmergency">Konkreter Notfall</string>
+    <string name="saveData">Daten speichern</string>
+    <string name="saveData">Daten speichern</string>
+    <string name="embbasy">Botschaft</string>
 </resources>
