@@ -129,7 +129,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         getNearbyPlaces.execute(transferData);
         Toast.makeText(this, "Searching for police station", Toast.LENGTH_SHORT).show();
-
     }
 
+    public void findEmbassy(View view) {
+
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+        mMap.clear();
+        mMap.addMarker(new MarkerOptions().position(new LatLng(Latitude, Longitude)).title("Current Location"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Latitude,Longitude)));
+
+        String url = getUrl(Latitude, Longitude, "embassy");
+        Object transferData[] = {mMap, url};
+
+        getNearbyPlaces.execute(transferData);
+        Toast.makeText(this, "Searching for embassy", Toast.LENGTH_SHORT).show();
+    }
 }
