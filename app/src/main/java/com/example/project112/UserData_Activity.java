@@ -165,18 +165,10 @@ public class UserData_Activity extends AppCompatActivity {
 
     public void AddUser(View view)
     {
-        if (firstName.getText().length() == 0)
+        if (firstName.getText().length() == 0 || lastName.getText().length() == 0)
         {
-            Toast.makeText(this, "Name is required", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Name and lastname is required", Toast.LENGTH_LONG).show();
             return;
-        }
-
-        for (User var : userList)
-        {
-            if (firstName.getText().toString() == var.getName())
-            {
-                 UpdateUserToDB(var);
-            }
         }
 
         User newUser = new User(firstName.getText().toString(),lastName.getText().toString());
@@ -190,16 +182,25 @@ public class UserData_Activity extends AppCompatActivity {
         userList.add(newUser);
         userNames.add(newUser.GetName());
 
+        SaveUserToDataBase(newUser);
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         usersSpinner.setAdapter(adapter);
         usersSpinner.setSelection(adapter.getPosition(selectedUser.GetName()));
-
-        SaveUserToDataBase(newUser);
     }
 
     private void UpdateUserToDB(User user)
     {
+        try {
+            db.open();
 
+            db.updateUser(user.GetID(),user.GetName(), user.GetLastName(), user.GetCNumber(),
+                    user.GetCountry(), user.GetMedications(), user.GetAllergies());
+
+            db.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     private void SaveUserToDataBase(User newUser)

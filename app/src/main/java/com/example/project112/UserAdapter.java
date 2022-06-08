@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.VisibleForTesting;
+
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -60,30 +62,37 @@ public class UserAdapter {
     }
 
     public long insertUser(String name, String lastName, String cnumber, String country, String medication, String allergies){
-        ContentValues vrijednosti = new ContentValues();
-        vrijednosti.put(NAME, name);
-        vrijednosti.put(LASTNAME, lastName);
-        vrijednosti.put(CNUMBER, cnumber);
+        ContentValues values = new ContentValues();
+        values.put(NAME, name);
+        values.put(LASTNAME, lastName);
+        values.put(CNUMBER, cnumber);
 
         //vrijednosti.put(DATEOFBIRTH, dateOfBirth);
 
-        vrijednosti.put(COUNTRY, country);
-        vrijednosti.put(MEDICATIONS, medication);
-        vrijednosti.put(ALLERGIES, allergies);
+        values.put(COUNTRY, country);
+        values.put(MEDICATIONS, medication);
+        values.put(ALLERGIES, allergies);
 
-        return db.insert(USER_TABLE, null, vrijednosti);
+        return db.insert(USER_TABLE, null, values);
     }
 
     public boolean deleteUser(long id){
         return db.delete(USER_TABLE, ID +" = "+id, null) > 0;
     }
 
-    public boolean updateUser(long id, String ime, String prezime){
-        ContentValues vrijednosti = new ContentValues();
-        vrijednosti.put(NAME, ime);
-        vrijednosti.put(LASTNAME, prezime);
+    public boolean updateUser(long id, String name, String lastName, String cnumber, String country, String medication, String allergies){
+        ContentValues values = new ContentValues();
+        values.put(NAME, name);
+        values.put(LASTNAME, lastName);
+        values.put(CNUMBER, cnumber);
 
-        return db.update(USER_TABLE, vrijednosti, ID +" = "+id, null ) > 0;
+        //vrijednosti.put(DATEOFBIRTH, dateOfBirth);
+
+        values.put(COUNTRY, country);
+        values.put(MEDICATIONS, medication);
+        values.put(ALLERGIES, allergies);
+
+        return db.update(USER_TABLE, values, ID +" = "+id, null ) > 0;
     }
 
     public Cursor printAllUsers (){
