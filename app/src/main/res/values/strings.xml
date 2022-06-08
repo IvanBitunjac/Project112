@@ -16,12 +16,6 @@
     <string name="phoneNumber">Phone Number</string>
     <string name="citizenNumber">Citizen number</string>
 
-    <string name="yourCitizenNumber">Your citizen number</string>
-    <string name="yourFirstName">Your first name</string>
-    <string name="yourLastName">Your last name</string>
-    <string name="yourAge">Your age</string>
-    <string name="yourPhoneNumber">Your phone number</string>
-
     <string name="immediatelyCalls112">Immediately calls 112</string>
     <string name="emergency">Emergency</string>
 
@@ -31,11 +25,10 @@
     <string name="firebrigade">Firebrigade</string>
     <string name="seaRescue">Sea Rescue</string>
     <string name="nearbyServices">Nearby services</string>
-
     <string name="fillPersonalData">Fill personal data</string>
-
     <string name="saveData">Save data</string>
-
+    <string name="embbasy">Embbasy</string>
+    <string name="country">Country of birth</string>
 
 
 </resources>

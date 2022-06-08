@@ -45,7 +45,7 @@
             android:layout_weight="1"
             android:backgroundTint="#009688"
             android:onClick="findEmbassy"
-            android:text="Embassy" />
+            android:text="@string/embbasy" />
     </LinearLayout>
 
 </RelativeLayout>

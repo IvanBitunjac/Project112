@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
                 android:gravity="center|left"
-                android:text="Country of birth"
+                android:text="@string/countryOfBirth"
                 android:textAlignment="gravity"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
@@ -205,7 +205,7 @@
                 android:layout_height="48dp"
                 android:background="@color/places_autocomplete_error_button"
                 android:onClick="AddUser"
-                android:text="Save data" />
+                android:text="@string/saveData" />
         </LinearLayout>
 
     </LinearLayout>
