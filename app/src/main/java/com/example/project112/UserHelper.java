@@ -9,6 +9,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -16,6 +17,7 @@ public class UserHelper extends SQLiteOpenHelper {
 
     public UserHelper(@Nullable Context context) {
         super(context, IME_BAZE, null, VERSION_BAZE);
+        //context.deleteDatabase(IME_BAZE);
     }
 
     @Override
@@ -25,7 +27,7 @@ public class UserHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        Log.w("FakultetDB", "DB Upgrade iz verzije " + oldVersion + " u novu verziju " + newVersion);
+        Log.w("UserDB", "DB Upgrade iz verzije " + oldVersion + " u novu verziju " + newVersion);
         sqLiteDatabase.execSQL(DROP_TABLE_USER);
         onCreate(sqLiteDatabase);
     }

@@ -154,7 +154,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextTextMedications"
                 android:layout_width="412dp"
                 android:layout_height="100dp"
                 android:background="@android:drawable/divider_horizontal_dark"
@@ -166,7 +166,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editTextTextAllergies"
                 android:layout_width="412dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
@@ -195,6 +195,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:onClick="AddNewUser"
                     app:srcCompat="@android:drawable/ic_menu_add" />
             </LinearLayout>
 
@@ -203,7 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="@color/places_autocomplete_error_button"
-                android:onClick="BtnSaveDataClicked"
+                android:onClick="AddUser"
                 android:text="Save data" />
         </LinearLayout>
 

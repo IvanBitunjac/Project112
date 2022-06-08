@@ -1,53 +1,53 @@
 package com.example.project112;
 
-import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 public class UserData_Activity extends AppCompatActivity {
 
-    //User data info
     private EditText firstName;
     private EditText lastName;
     private EditText citizenNumber;
     private EditText age;
-
     private Spinner countrySpinner;
+    private EditText medications;
+    private EditText allergies;
+    private Spinner usersSpinner;
 
-    //User data
-    SharedPreferences userData;
-    SharedPreferences.Editor userDataEditor;
+    ArrayAdapter<String> adapter;
+
+
+    private SharedPreferences userData;
+    private SharedPreferences.Editor userDataEditor;
+
+    private List<User> userList = new ArrayList<>();
+    private List<String> userNames = new ArrayList<>();
+    private User selectedUser;
+
+
+    private UserAdapter db;
 
 
     @Override
@@ -55,17 +55,43 @@ public class UserData_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_data);
 
+        FindAllViews();
+        FillCountrySpinner();
+        DatePicker();
+        UserSpinner();
+
+        db = new UserAdapter(this);
+
+        GetAllUserFromDB();
+        printAllFromDB();
+
+        adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, userNames);
+
+        if (!userList.isEmpty())
+        {
+            usersSpinner.setSelection(0);
+            selectedUser = userList.get(0);
+            UpdateValues(selectedUser);
+
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            usersSpinner.setAdapter(adapter);
+        }
+
+        //userData = getSharedPreferences("UserDataPreferences", Context.MODE_PRIVATE);
+        //ReadUserDataFromPreferences();
+    }
+
+    private void FindAllViews()
+    {
         firstName = findViewById(R.id.editTextName);
         lastName = findViewById(R.id.editTextSurname);
         citizenNumber = findViewById(R.id.editTextCitizenNum);
-
-        FillCountrySpinner();
-        DatePicker();
-
-        //userData = getSharedPreferences("UserDataPreferences", Context.MODE_PRIVATE);
-
-        //ReadUserDataFromPreferences();
-
+        age = findViewById(R.id.editTextAge);
+        countrySpinner = findViewById(R.id.spinner2);
+        medications = findViewById(R.id.editTextTextMedications);
+        allergies = findViewById(R.id.editTextTextAllergies);
+        usersSpinner = findViewById(R.id.spinner);
     }
 
     public void BtnSaveDataClicked(View view){
@@ -74,7 +100,6 @@ public class UserData_Activity extends AppCompatActivity {
         userDataEditor.putString("firstName", firstName.getText().toString());
         userDataEditor.putString("lastName", lastName.getText().toString());
         userDataEditor.putString("citizenNumber", citizenNumber.getText().toString());
-        userDataEditor.putString("age", age.getText().toString());
 
         if(userDataEditor.commit()){
             Toast.makeText(this, "Data saved successfully!", Toast.LENGTH_SHORT).show();
@@ -136,5 +161,149 @@ public class UserData_Activity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    public void AddUser(View view)
+    {
+        if (firstName.getText().length() == 0)
+        {
+            Toast.makeText(this, "Name is required", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        for (User var : userList)
+        {
+            if (firstName.getText().toString() == var.getName())
+            {
+                 UpdateUserToDB(var);
+            }
+        }
+
+        User newUser = new User(firstName.getText().toString(),lastName.getText().toString());
+
+        newUser.SetCNumber(citizenNumber.getText().toString());
+        newUser.SetCountry(countrySpinner.getSelectedItem().toString());
+        newUser.SetAllergies(allergies.getText().toString());
+        newUser.SetMedications(medications.getText().toString());
+
+        selectedUser = newUser;
+        userList.add(newUser);
+        userNames.add(newUser.GetName());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        usersSpinner.setAdapter(adapter);
+        usersSpinner.setSelection(adapter.getPosition(selectedUser.GetName()));
+
+        SaveUserToDataBase(newUser);
+    }
+
+    private void UpdateUserToDB(User user)
+    {
+
+    }
+
+    private void SaveUserToDataBase(User newUser)
+    {
+        try {
+            db.open();
+            long id;
+
+            id = db.insertUser(newUser.GetName(), newUser.GetLastName(), newUser.GetCNumber(),
+                    newUser.GetCountry(), newUser.GetMedications(), newUser.GetAllergies());
+
+            newUser.SetID(id);
+
+            db.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        printAllFromDB();
+    }
+
+    public void AddNewUser(View view)
+    {
+        ClearAllInputs();
+    }
+
+    private void UserSpinner()
+    {
+        usersSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long di) {
+
+                for (User var: userList)
+                {
+                 if (var.GetName() == usersSpinner.getSelectedItem().toString())
+                 {
+                     selectedUser = var;
+                     UpdateValues(selectedUser);
+                 }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private void GetAllUserFromDB()
+    {
+        try {
+            db.open();
+
+            Cursor c = db.printAllUsers();
+            if (c.moveToFirst()){
+                do {
+                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(6));
+                    userList.add(user);
+                    userNames.add(user.GetName());
+                }while (c.moveToNext());
+            }
+            db.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    private void printAllFromDB() {
+
+        try {
+            db.open();
+
+            Cursor c = db.printAllUsers();
+            if (c.moveToFirst()){
+                do {
+                    Log.i("DB","Ispis : ID = " + c.getString(0) + " IME = " + c.getString(1) + " "+ c.getString(2)+ " "+ c.getString(3)+ " "+ c.getString(4)+ " "+ c.getString(5)+ " "+ c.getString(6));
+                }while (c.moveToNext());
+            }
+            db.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    private void UpdateValues(User newValues)
+    {
+        firstName.setText(newValues.GetName());
+        lastName.setText(newValues.GetLastName());
+        age.setText(newValues.GetAge());
+        citizenNumber.setText(newValues.GetCNumber());
+        medications.setText(newValues.GetMedications());
+        allergies.setText(newValues.GetAllergies());
+    }
+
+    private void ClearAllInputs()
+    {
+        firstName.setText("");
+        lastName.setText("");
+        age.setText("");
+        citizenNumber.setText("");
+        medications.setText("Medications");
+        allergies.setText("Allergies");
     }
 }
