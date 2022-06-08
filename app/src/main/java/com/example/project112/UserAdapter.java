@@ -26,7 +26,7 @@ public class UserAdapter {
     static final String ID = "id";
     static final String NAME = "name";
     static final String LASTNAME = "lastName";
-    static final Date DATEOFBIRTH = null;
+    static final String DATEOFBIRTH = "date";
     static final String CNUMBER = "cnumber";
     static final String COUNTRY = "country";
     static final String MEDICATIONS = "medication";
@@ -38,6 +38,7 @@ public class UserAdapter {
                     ID + " integer primary key autoincrement, " +
                     NAME + " text not null, " +
                     LASTNAME + " text not null, " +
+                    DATEOFBIRTH + " text, " +
                     CNUMBER + " text, " +
                     COUNTRY + " text, " +
                     MEDICATIONS + " text, " +

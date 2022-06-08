@@ -44,6 +44,10 @@ public class User {
     {
         return _age;
     }
+    public void SetAge(String age)
+    {
+         _age = age;
+    }
 
     public String GetCNumber()
     {

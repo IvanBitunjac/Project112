@@ -36,7 +36,8 @@ public class UserData_Activity extends AppCompatActivity {
     private EditText allergies;
     private Spinner usersSpinner;
 
-    ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> countryAdapter;
 
 
     private SharedPreferences userData;
@@ -128,8 +129,8 @@ public class UserData_Activity extends AppCompatActivity {
         Collections.sort(countries, String.CASE_INSENSITIVE_ORDER);
 
         Spinner country_obj = (Spinner)findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, countries);
-        country_obj.setAdapter(adapter);
+        countryAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, countries);
+        country_obj.setAdapter(countryAdapter);
     }
 
     private void DatePicker()
@@ -175,6 +176,7 @@ public class UserData_Activity extends AppCompatActivity {
         newUser.SetCountry(countrySpinner.getSelectedItem().toString());
         newUser.SetAllergies(allergies.getText().toString());
         newUser.SetMedications(medications.getText().toString());
+        newUser.SetAge(age.getText().toString());
 
         selectedUser = newUser;
         userList.add(newUser);
@@ -256,7 +258,7 @@ public class UserData_Activity extends AppCompatActivity {
             Cursor c = db.printAllUsers();
             if (c.moveToFirst()){
                 do {
-                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(6));
+                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
                     userList.add(user);
                     userNames.add(user.GetName());
                 }while (c.moveToNext());
@@ -294,6 +296,7 @@ public class UserData_Activity extends AppCompatActivity {
         citizenNumber.setText(newValues.GetCNumber());
         medications.setText(newValues.GetMedications());
         allergies.setText(newValues.GetAllergies());
+        countrySpinner.setSelection(countryAdapter.getPosition(newValues.GetCountry()));
     }
 
     private void ClearAllInputs()

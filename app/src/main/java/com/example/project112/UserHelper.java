@@ -17,7 +17,7 @@ public class UserHelper extends SQLiteOpenHelper {
 
     public UserHelper(@Nullable Context context) {
         super(context, IME_BAZE, null, VERSION_BAZE);
-        //context.deleteDatabase(IME_BAZE);
+        context.deleteDatabase(IME_BAZE);
     }
 
     @Override
