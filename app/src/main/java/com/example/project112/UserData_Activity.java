@@ -269,7 +269,7 @@ public class UserData_Activity extends AppCompatActivity {
         lastName.setText("");
         age.setText("");
         citizenNumber.setText("");
-        medications.setText("Medications");
-        allergies.setText("Allergies");
+        medications.setText("");
+        allergies.setText("");
     }
 }
