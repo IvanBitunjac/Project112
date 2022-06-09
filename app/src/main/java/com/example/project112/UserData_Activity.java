@@ -222,7 +222,7 @@ public class UserData_Activity extends AppCompatActivity {
             Cursor c = db.printAllUsers();
             if (c.moveToFirst()){
                 do {
-                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
+                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6));
                     userList.add(user);
                     userNames.add(user.GetName());
                 }while (c.moveToNext());

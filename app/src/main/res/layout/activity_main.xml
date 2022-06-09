@@ -116,7 +116,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:backgroundTint="#28812C"
-        android:onClick="personalDataOnClick"
+        android:onClick="locateOnClick"
         android:scaleType="centerCrop"
         android:text="@string/nearbyServices"
         app:layout_constraintBottom_toBottomOf="parent"

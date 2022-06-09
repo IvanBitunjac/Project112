@@ -18,12 +18,11 @@ public class User {
         _lastname = lastName;
     }
 
-    public User(long id, String name, String lastName, String age, String cNumber,String country,String medications,String allergies)
+    public User(long id, String name, String lastName, String cNumber,String country,String medications,String allergies)
     {
         _id = id;
         _name = name;
         _lastname = lastName;
-        _age =age;
         _cNumber = cNumber;
         _country = country;
         _medications = medications;

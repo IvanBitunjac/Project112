@@ -33,7 +33,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewSurname"
@@ -59,7 +60,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
-        app:layout_constraintTop_toBottomOf="@id/editTextName" />
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewAge"
@@ -85,7 +87,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline19"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
-        app:layout_constraintTop_toBottomOf="@id/editTextSurname" />
+        app:layout_constraintTop_toBottomOf="@id/editTextSurname"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textViewCitizenNum"
@@ -111,7 +114,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
-        app:layout_constraintTop_toBottomOf="@id/editTextAge" />
+        app:layout_constraintTop_toBottomOf="@id/editTextAge"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textCountry"
@@ -134,11 +138,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/guideline21"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
         app:layout_constraintTop_toBottomOf="@id/editTextCitizenNum"
-        app:layout_constraintBottom_toTopOf="@id/guideline21"
-        />
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextMedications"
@@ -179,7 +183,8 @@
         app:layout_constraintBottom_toTopOf="@id/guideline16"
         app:layout_constraintEnd_toStartOf="@id/guideline12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextTextAllergies" />
+        app:layout_constraintTop_toBottomOf="@id/editTextTextAllergies"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -194,7 +199,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline12"
         app:layout_constraintTop_toBottomOf="@id/editTextTextAllergies"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/buttonSaveData"
@@ -211,7 +217,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline16" />
+        app:layout_constraintTop_toBottomOf="@id/guideline16"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
