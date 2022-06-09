@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Project112</string>
+    <string name="name">Ім\'я</string>
+    <string name="surname">Прізвище</string>
+    <string name="medications">Ліки</string>
+    <string name="medications">Ліки</string>
+    <string name="allergies">Алергія</string>
+    <string name="cancel">Cancle</string>
+    <string name="dateOfBirth">Дата народження</string>
+    <string name="countryOfBirth">Країна народження</string>
+    <string name="phoneNumber">Телефонний номер</string>
+    <string name="citizenNumber">Номер громадянина</string>
+    <string name="immediatelyCalls112">Негайно телефонує 112</string>
+    <string name="immediatelyCalls112">Негайно телефонує 112</string>
+    <string name="emergency">Надзвичайна ситуація</string>
+    <string name="emergency">Надзвичайна ситуація</string>
+    <string name="specificEmergency">Специфічні надзвичайні ситуації</string>
+    <string name="specificEmergency">Специфічні надзвичайні ситуації</string>
+    <string name="police">Поліція</string>
+    <string name="hospital">Лікарня</string>
+    <string name="firebrigade">Пожежна бригада</string>
+    <string name="firebrigade">Пожежна бригада</string>
+    <string name="seaRescue">Морський порятунок</string>
+    <string name="nearbyServices">Порядні служби</string>
+    <string name="fillPersonalData">Заповніть персональні дані</string>
+    <string name="saveData">Збережіть дані</string>
+    <string name="saveData">Збережіть дані</string>
+    <string name="embbasy">посольство</string>
+    <string name="age">вік</string>
+    <string name="age">вік</string>
 </resources>

@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">Project112</string>
     <string name="name">Vorname</string>
-    <string name="surname">Familien-oder</string>
-    <string name="medications">Nachname</string>
-    <string name="allergies">Medikamente</string>
+    <string name="surname">Nachname</string>
+    <string name="medications">Medikamente</string>
+    <string name="allergies">Allergien</string>
     <string name="police">Polizei</string>
     <string name="cancel">Abbrechen</string>
     <string name="hospital">Krankenhaus</string>
