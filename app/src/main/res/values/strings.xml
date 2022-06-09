@@ -20,7 +20,6 @@
     <string name="police">Police</string>
     <string name="hospital">Hospital</string>
     <string name="firebrigade">Firebrigade</string>
-    <string name="seaRescue">Sea Rescue</string>
     <string name="nearbyServices">Nearby services</string>
     <string name="fillPersonalData">Fill personal data</string>
     <string name="saveData">Save data</string>
@@ -29,7 +28,5 @@
     <string name="phoneNumber">Phone Number</string>
     <string name="specificEmergency">Specific emergency</string>
     <string name="seaRescue">Sea Rescue</string>
-    <string name="seaRescue">Sea Rescue</string>
-
 
 </resources>

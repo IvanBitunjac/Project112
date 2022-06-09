@@ -2,37 +2,24 @@
 <resources>
     <string name="app_name">Project112</string>
     <string name="name">Имя</string>
-    <string name="name">Имя</string>
     <string name="surname">Фамилия</string>
     <string name="medications">Лекарства</string>
     <string name="allergies">аллергии</string>
     <string name="cancel">Отменить</string>
-    <string name="cancel">Отменить</string>
     <string name="dateOfBirth">Дата рождения</string>
-    <string name="dateOfBirth">Дата рождения</string>
-    <string name="countryOfBirth">Страна рождения</string>
     <string name="countryOfBirth">Страна рождения</string>
     <string name="phoneNumber">Номер телефона</string>
     <string name="citizenNumber">Номер гражданина</string>
-    <string name="citizenNumber">Номер гражданина</string>
     <string name="immediatelyCalls112">Немедленно звонит 112</string>
-    <string name="emergency">Чрезвычайная ситуация</string>
     <string name="emergency">Чрезвычайная ситуация</string>
     <string name="specificEmergency">Конкретная чрезвычайная ситуация</string>
     <string name="police">Полиция</string>
     <string name="hospital">Больница</string>
-    <string name="hospital">Больница</string>
-    <string name="firebrigade">Пожарная бригада</string>
     <string name="firebrigade">Пожарная бригада</string>
     <string name="seaRescue">Спасение на море</string>
-    <string name="seaRescue">Спасение на море</string>
-    <string name="nearbyServices">Услуги поблизости</string>
     <string name="nearbyServices">Услуги поблизости</string>
     <string name="fillPersonalData">Заполнить личные данные</string>
-    <string name="fillPersonalData">Заполнить личные данные</string>
     <string name="saveData">Сохранять данные</string>
-    <string name="saveData">Сохранять данные</string>
-    <string name="embbasy">Посольство</string>
     <string name="embbasy">Посольство</string>
     <string name="age">Возраст</string>
 </resources>
