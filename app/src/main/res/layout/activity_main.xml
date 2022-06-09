@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="CROATIA TURIST SOS"
+        android:text="CroaTurist-SOS"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="bold"
