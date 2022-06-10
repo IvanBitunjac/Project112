@@ -62,13 +62,13 @@ public class UserAdapter {
         dbHelper.close();
     }
 
-    public long insertUser(String name, String lastName, String cnumber, String country, String medication, String allergies){
+    public long insertUser(String name, String lastName, String dateOfBirth,String cnumber, String country, String medication, String allergies){
         ContentValues values = new ContentValues();
         values.put(NAME, name);
         values.put(LASTNAME, lastName);
         values.put(CNUMBER, cnumber);
 
-        //vrijednosti.put(DATEOFBIRTH, dateOfBirth);
+        values.put(DATEOFBIRTH, dateOfBirth);
 
         values.put(COUNTRY, country);
         values.put(MEDICATIONS, medication);

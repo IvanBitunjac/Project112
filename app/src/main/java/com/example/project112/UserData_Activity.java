@@ -186,7 +186,7 @@ public class UserData_Activity extends AppCompatActivity {
             long id;
 
             //Log.i("DB","insert " + newUser.GetName() +" "+ newUser.GetLastName() + " "+newUser.GetCNumber()+" "+ newUser.GetCountry()+ " " +newUser.GetMedications()+" " +newUser.GetAllergies());
-            id = db.insertUser(newUser.GetName(), newUser.GetLastName(), newUser.GetCNumber(),
+            id = db.insertUser(newUser.GetName(), newUser.GetLastName(), age.getText().toString(),newUser.GetCNumber(),
                     newUser.GetCountry(), newUser.GetMedications(), newUser.GetAllergies());
 
             newUser.SetID(id);
@@ -233,7 +233,7 @@ public class UserData_Activity extends AppCompatActivity {
             Cursor c = db.printAllUsers();
             if (c.moveToFirst()){
                 do {
-                    User user = new User(c.getLong(0),c.getString(1),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
+                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
                     //Log.i("DB", "add" + c.getLong(0)+c.getString(1)+c.getString(2)+c.getString(3)+c.getString(4)+c.getString(5)+c.getString(6));
                     //Log.i("DB","insert " + user.GetID() + user.GetName() +" "+ user.GetLastName() + " "+user.GetCNumber()+" "+ user.GetCountry()+ " " +user.GetMedications()+" " +user.GetAllergies());
 
