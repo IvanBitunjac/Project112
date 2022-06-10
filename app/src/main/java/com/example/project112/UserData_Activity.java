@@ -41,9 +41,6 @@ public class UserData_Activity extends AppCompatActivity {
     private ArrayAdapter<String> countryAdapter;
 
 
-    private SharedPreferences userData;
-    private SharedPreferences.Editor userDataEditor;
-
     private List<User> userList = new ArrayList<>();
     private List<String> userNames = new ArrayList<>();
     private User selectedUser;
@@ -198,8 +195,6 @@ public class UserData_Activity extends AppCompatActivity {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-        //printAllFromDB();
     }
 
     public void AddNewUser(View view)
@@ -236,13 +231,11 @@ public class UserData_Activity extends AppCompatActivity {
             db.open();
 
             Cursor c = db.printAllUsers();
-            userList.clear();
-            userNames.clear();
             if (c.moveToFirst()){
                 do {
                     User user = new User(c.getLong(0),c.getString(1),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
                     //Log.i("DB", "add" + c.getLong(0)+c.getString(1)+c.getString(2)+c.getString(3)+c.getString(4)+c.getString(5)+c.getString(6));
-                    Log.i("DB","insert " + user.GetID() + user.GetName() +" "+ user.GetLastName() + " "+user.GetCNumber()+" "+ user.GetCountry()+ " " +user.GetMedications()+" " +user.GetAllergies());
+                    //Log.i("DB","insert " + user.GetID() + user.GetName() +" "+ user.GetLastName() + " "+user.GetCNumber()+" "+ user.GetCountry()+ " " +user.GetMedications()+" " +user.GetAllergies());
 
                     userList.add(user);
                     userNames.add(user.GetName());
