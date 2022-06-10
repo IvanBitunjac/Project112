@@ -74,6 +74,8 @@ public class UserData_Activity extends AppCompatActivity {
             selectedUser = userList.get(0);
             UpdateValues(selectedUser);
 
+
+
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             usersSpinner.setAdapter(adapter);
         }
@@ -161,6 +163,12 @@ public class UserData_Activity extends AppCompatActivity {
         userNames.add(newUser.GetName());
 
         SaveUserToDataBase(newUser);
+
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("CountryPreference", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Country", newUser.GetCountry());
+
+        editor.apply();
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         usersSpinner.setAdapter(adapter);
@@ -261,6 +269,12 @@ public class UserData_Activity extends AppCompatActivity {
         medications.setText(newValues.GetMedications());
         allergies.setText(newValues.GetAllergies());
         countrySpinner.setSelection(countryAdapter.getPosition(newValues.GetCountry()));
+
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("CountryPreference", 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("Country", selectedUser.GetCountry());
+
+        editor.apply();
     }
 
     private void ClearAllInputs()

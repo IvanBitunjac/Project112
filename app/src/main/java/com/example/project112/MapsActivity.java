@@ -1,5 +1,6 @@
 package com.example.project112;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.libraries.places.api.Places;
@@ -26,9 +28,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String city;
     private String postalCode;
     private String addressLine;
+    private String HomeCountry;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences settings = getApplicationContext().getSharedPreferences("CountryPreference", 0);
+        HomeCountry = settings.getString("Country", "");
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -87,7 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng cur = new LatLng(Latitude, Longitude);
         mMap.addMarker(new MarkerOptions().position(cur).title("Current Location"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(cur));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Latitude, Longitude)));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(12.0f));
 
     }
@@ -137,11 +143,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(new LatLng(Latitude, Longitude)).title("Current Location"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(Latitude,Longitude)));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(12.0f));
 
-        String url = getUrl(Latitude, Longitude, "embassy");
+
+        String url = getUrl(Latitude, Longitude, HomeCountry + "embassy");
         Object transferData[] = {mMap, url};
 
         getNearbyPlaces.execute(transferData);
-        Toast.makeText(this, "Searching for embassy", Toast.LENGTH_SHORT).show();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (getNearbyPlaces.googleplaceData.contains("ZERO_RESULTS")) {
+            Toast.makeText(this, "Couldn't find embassy for: " + HomeCountry, Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this, "Searching for embassy", Toast.LENGTH_SHORT).show();
+        }
     }
 }

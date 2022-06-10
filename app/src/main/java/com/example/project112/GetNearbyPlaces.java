@@ -16,7 +16,7 @@ import java.util.List;
 
 public class GetNearbyPlaces extends AsyncTask<Object, String, String>
 {
-    private String googleplaceData, url;
+    public String googleplaceData, url;
     private GoogleMap mMap;
 
     @Override
@@ -68,7 +68,6 @@ public class GetNearbyPlaces extends AsyncTask<Object, String, String>
             markerOptions.title(nameOfPlace + " : " + vicinity);
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
             mMap.addMarker(markerOptions);
-            mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
         }
     }
 }
