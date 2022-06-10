@@ -63,7 +63,7 @@ public class UserData_Activity extends AppCompatActivity {
         db = new UserAdapter(this);
 
         GetAllUserFromDB();
-        printAllFromDB();
+        //printAllFromDB();
 
         adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, userNames);
@@ -73,8 +73,6 @@ public class UserData_Activity extends AppCompatActivity {
             usersSpinner.setSelection(0);
             selectedUser = userList.get(0);
             UpdateValues(selectedUser);
-
-
 
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             usersSpinner.setAdapter(adapter);
@@ -150,6 +148,15 @@ public class UserData_Activity extends AppCompatActivity {
             return;
         }
 
+        for (User var : userList)
+        {
+            if (var.getName() == firstName.getText().toString())
+            {
+                Toast.makeText(this, "Name exists", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
         User newUser = new User(firstName.getText().toString(),lastName.getText().toString());
 
         newUser.SetCNumber(citizenNumber.getText().toString());
@@ -181,6 +188,7 @@ public class UserData_Activity extends AppCompatActivity {
             db.open();
             long id;
 
+            //Log.i("DB","insert " + newUser.GetName() +" "+ newUser.GetLastName() + " "+newUser.GetCNumber()+" "+ newUser.GetCountry()+ " " +newUser.GetMedications()+" " +newUser.GetAllergies());
             id = db.insertUser(newUser.GetName(), newUser.GetLastName(), newUser.GetCNumber(),
                     newUser.GetCountry(), newUser.GetMedications(), newUser.GetAllergies());
 
@@ -191,7 +199,7 @@ public class UserData_Activity extends AppCompatActivity {
             throwables.printStackTrace();
         }
 
-        printAllFromDB();
+        //printAllFromDB();
     }
 
     public void AddNewUser(View view)
@@ -228,9 +236,14 @@ public class UserData_Activity extends AppCompatActivity {
             db.open();
 
             Cursor c = db.printAllUsers();
+            userList.clear();
+            userNames.clear();
             if (c.moveToFirst()){
                 do {
-                    User user = new User(c.getLong(0),c.getString(1),c.getString(2),c.getString(3),c.getString(4),c.getString(5),c.getString(6));
+                    User user = new User(c.getLong(0),c.getString(1),c.getString(3),c.getString(4),c.getString(5),c.getString(6),c.getString(7));
+                    //Log.i("DB", "add" + c.getLong(0)+c.getString(1)+c.getString(2)+c.getString(3)+c.getString(4)+c.getString(5)+c.getString(6));
+                    Log.i("DB","insert " + user.GetID() + user.GetName() +" "+ user.GetLastName() + " "+user.GetCNumber()+" "+ user.GetCountry()+ " " +user.GetMedications()+" " +user.GetAllergies());
+
                     userList.add(user);
                     userNames.add(user.GetName());
                 }while (c.moveToNext());
@@ -262,6 +275,7 @@ public class UserData_Activity extends AppCompatActivity {
 
     private void UpdateValues(User newValues)
     {
+        Log.i("DB", newValues.GetName() + newValues.GetLastName() + newValues.GetAge() + newValues.GetCNumber() + newValues.GetAllergies() + newValues.GetMedications());
         firstName.setText(newValues.GetName());
         lastName.setText(newValues.GetLastName());
         age.setText(newValues.GetAge());
